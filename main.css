@@ -1,0 +1,526 @@
+html, body {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  height:100vh;  /*height of screen*/
+  margin: 0;
+  padding: 0;
+  background-color: deepskyblue;
+}
+
+/*General styling*/
+
+.link:hover {
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+h1 {
+  color: darkslateblue;
+  font-size: 2em;
+  margin-top: 3%;
+  margin-top: 1%;
+}
+
+
+#main_container {
+  width: 70%;
+  margin: auto;
+  height:98%; 
+  background-color: darkslateblue;
+}
+
+#alert_box {
+  display: none;
+  margin: 1%;
+  position: absolute;
+  top: 12%;
+  margin-left: 7.5%;
+  min-height: 5%;
+  width: 54%;
+  background-color: gold;
+  z-index: 5;                          /*MUST HAVE HIGHEST Z-INDEX!*/
+  border: 1px solid red;
+}
+
+#alert_message {
+  width: 90%;
+  padding: 2% 4%;
+  color: red;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#close_alert {
+  width: 5%;
+  float: right;
+  position: fixed;
+  right: 20.5%;
+  top: 13%;
+  line-height: 2em;
+}
+
+/*Navigation*/
+
+#input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 13%;
+  padding: 1.5%;
+  text-align: center;
+}
+
+#nav_image {
+  height: 79%;
+  width: 7%;
+  background-color: azure;
+  padding: 0.8%;
+  float: left;
+  border-radius: 5px;
+  display: inline-flex;
+}
+
+.\2do-logo {
+  max-height: 90%;
+}
+
+#input_form {
+  width: 91%;
+  float: right;
+  display: inline-flex;
+  margin-top: 0.5%;
+  padding: 0.1%;
+}
+
+#input_form div {
+ /* width: 24%;*/
+  display: inline-block;
+/*      height: 2em;*/
+  vertical-align: center;
+}
+
+#input_form label {
+  color: white;
+}
+
+#input_location {
+  width: 26%;
+  text-align: left;
+  padding-left: 1%;
+}
+
+#location_search_term {
+  height: 2.1em;
+  width: 90%;
+}
+
+#input_time {
+  width: 24%;
+  text-align: left;
+  padding-top: 3%;
+  margin-right: 2%;
+}
+
+#time_range_set {
+  height: 2.1em;
+  width: 40%;
+}
+
+#input_radius {
+  width: 21%;
+  text-align: left;
+  padding-top: 3%;
+}
+
+#radius_set {
+  height: 2.1em;
+  width: 54%;
+}
+
+#submit_input {
+  width: 15%;
+  height: 2.1em;
+}
+
+#search_button {
+  height: 2.1em;
+  font-size: 1.5em;
+  margin-top: 18%;
+  margin-left: 38%;
+}
+
+#welcome, #searching, #map, #eventBoxes {
+  height: 67%;
+  width: 66%;
+  padding: 1%;
+  margin: 1%;
+  position: absolute;
+  top: 11%;
+  display: block;
+}
+
+/*Main content area*/
+
+#welcome {
+  background-color: azure;
+  z-index: 2;
+  text-align: center;
+  } 
+
+.welcome_logo {
+  margin: 6% 0% 3% 0%;
+  height: 60%;
+}
+
+#searching {
+  background-color: azure;
+  z-index: 1;
+  text-align: center;
+}
+
+#map {
+  z-index: 3;
+}
+
+#results {
+  display: none;    /*displayed only once api response received*/
+  width: 69%;
+  height: 10%;
+  padding: 0.5%;
+  margin-bottom: 2%;
+  text-align: center;
+  background-color: darkslateblue;
+  position: fixed;
+  bottom: 0;        /*to be displayed below main conent box*/
+}
+
+#results_count, #earliest_result {
+  color: white;
+  font-size: 1.3em;
+  margin-top: 0%;
+}
+
+#results-links {
+  min-width: 62%;
+  margin-left: 19%;
+  margin-top: 1%;
+  height: 2em;
+}
+
+#eventBoxes {
+  display: none;
+  z-index: 4;
+  margin-bottom: 2%;
+}
+
+
+div[id^="eventBoxNo"] {
+  height: 100%;
+  display: none;
+  border: 1px solid black;
+  margin: auto;
+  padding: 1%;
+  text-align: center;
+  background-color: azure;
+}
+
+nav[id^="event_nav"] {
+  height: 100px;
+  width: 95%;
+  background-color: white;
+  padding: 0%;
+  margin: 0%;
+  display: inline-flex;
+  position: absolute;
+  left: 2.5%;
+  top: 4%;
+}
+
+nav[id^="event_nav"] div {
+  border: 1px solid black;
+  padding: 0%;
+}
+
+div[id^="event_start_div"] {
+  width: 20%;
+  height: 100%;
+  display: inline-flex;
+  float: left;
+} 
+
+div[id^="event_date_div"] {
+  width: 40%;
+  height: 92%;
+  margin: 2%;
+}
+
+ p[id^="event_day_p"] {
+  background-color: mediumpurple;
+  height: 25%;
+  margin: 0%;
+} 
+
+p[id^="event_date_p"] { 
+    height: 50%;
+    margin: 0%;
+    font-size: 2.5em;
+    background-color: white;
+}   
+
+p[id^="event_month_p"] {
+  height: 25%;
+  margin: 0%;
+  background-color: mediumpurple;
+} 
+
+div[id^="event_time_div"] {
+font-size: 1.8em;
+line-height: 3.7em;
+letter-spacing: 0.05em;
+text-align: center;
+}
+
+/*date and time divs within above!!!!*/
+
+div[id^="event_name_place_div"] {
+  min-width: 73%;
+  height: 100px;
+  display: inline-block;
+} 
+
+div[id^="event_name_div"], div[id^="event_venue_div"] {
+    width: 100%;
+    height: 48%;
+    font-weight: bold;
+    overflow-x: scroll;
+} 
+
+div[id^="event_name_div"] {
+  background-color: mediumpurple;
+}
+
+div[id^="event_venue_div"] {
+  margin-top: 0.5%;
+}
+
+div[id^="event_minimize_div"] {
+  width: 10%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+div[id^="event_minimize_div"] div {
+  height: 31.67%;
+  margin: 0%;
+}
+
+div[id^="return_to_map"] {
+  font-size: 1.8em;
+}
+
+#map_button {
+  max-height: 97%;
+}
+
+div[id^="next_event_box"] {
+  font-size: 1.4em;
+}
+
+div[id^="last_event_box"] {
+  font-size: 1.4em;
+}
+
+div[id^="event_content_div"], #venue_content_div {
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-top: 1%;
+  overflow-y: scroll;
+  position: absolute;
+  left: 2.84%;
+  top: 24%;
+  width: 94.2%;
+  height: 74%;
+
+  /*adding basic styling as inheriting content - meetups event description can inlude html tags so styling can cause problems*/
+  
+  line-height: 1.5em;
+  padding: 0.5% 1% 3% 0.5%;
+  text-align: justify;
+}
+
+div[id^="event_content_div"] {
+   background-color: lavender;
+   display: block;
+   z-index: 1
+}
+
+#venue_content_div {
+  background-color: lavender;
+  display: block;
+  z-index: 2;
+  padding-left: 2%;
+  padding-top: 2%;
+}
+
+div[id^="venue_content_div"] p {
+  width: 90%;
+  background-color: lavender;
+}
+
+#venue_details, #venue_address, #venue_tips {
+  height: 85%;
+  display: inline-block;
+  overflow: auto;
+}
+
+.venue_div_heading {
+  font-weight: bold;
+  text-decoration: underline;;
+}
+
+#venue_details {
+  width: 30%;
+}
+
+#venue_details p {
+  height: 10%;
+  margin: 0.6% 5%;
+  padding: 0%;
+  text-align: center;
+
+}
+
+#venue_image {
+  width: 99%;
+  margin-left:0.5%;
+  text-align: center;
+}
+#venue_image img {
+  margin-left:0;
+}
+
+#venue_address {
+  width: 30%;
+}
+
+#venue_address p {
+  height: 10%;
+  margin: 0.5% 4%;
+  padding: 0.8%;
+  overflow: auto;
+  text-align: left;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+div[id^="venue_"] span {
+  text-align: right;
+}
+
+#venue_tips {
+  width: 38%;
+}
+#venue_tips p {
+  margin-top: 4%;
+  font-size: 0.95em;
+  padding-left: 0.5%;
+  line-height: 1.2em;
+  word-spacing: inherit;
+  font-style: oblique;
+  }
+
+.venue_insert {       
+  text-align: left;
+  font-weight: normal;
+}
+
+
+@media (max-width: 1150px) {
+  #search_button {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 1123px) {
+  #input_time {
+  margin-right: 0%;
+  }
+  #input_radius {
+    width: 25%;
+  }
+  #radius_set {
+  width: 63%;
+  }
+   #time_range_set {
+    width: 45%;
+  }
+}  
+
+@media (max-width: 1041px) {
+  div[id^="event_time_div"] {
+    font-size: 1.4em;
+    line-height: 4.4em;
+    letter-spacing: 0.0em;
+    width: 50%;
+  }
+  div[id^="event_name_place_div"] {
+    min-width: 73%; 
+  }
+  #venue_address p {
+    font-size: 0.95em
+  }
+  #close_alert {
+    right: 22.5%;
+  }
+  #results_count, #earliest_result {
+    font-size: 1em;
+    margin-top: 1%;
+  }
+}
+
+@media (max-width: 931px) {
+  #input_radius {
+    width: 20%;
+  }
+  #input_time, #input_radius {
+    padding-top: 1.2%;
+    padding-left: 1%;
+  }
+  #time_range_set {
+    width: 74%;
+  }
+  #radius_set {
+    width: 88%;
+  }
+  #submit_input {
+    padding-top: 0.8%;
+    margin-left: -1.5%;
+  }
+  div[id^="event_date_div"] {
+    width: 36%;
+    margin: 2% 1%;
+  }
+  p[id^="event_date_p"] {
+  font-size: 2em;
+  line-height: 1.5em;
+  }
+  div[id^="event_time_div"] {
+    width: 57%;
+  }
+  #venue_address p {
+    font-size: 0.95em
+  }
+}
+
+@media (max-width: 860px) {
+  #submit_input {
+    padding-top: 0.8%;
+  }
+}
+
+
+
+
+
+

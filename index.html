@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2do</title>
+     <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 805px)"
+    href="max-805.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/location.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk9u7ZvysqPW8t3dKoI30Yd3v68_glOms&libraries=places"></script>
+  </head>
+  
+  <body>
+    <div class="container" id="main_container">       
+      <nav id="input">
+        <a href="index.html">
+          <img id="nav_image" src="images/main2dologo.gif" alt="2do logo">
+        </a>
+        <form id="input_form">
+          <div id="input_location">
+            <label class="input_label">what 2do in:</label><br>
+            <input type="text" id="location_search_term" placeholder="Current location">
+          </div>
+          <div id="input_time">        
+            <label class="input_label">in the next:</label>
+            <select id="time_range_set" class="link">   <!--       Values correspond to selected time in milliseconds -->          
+              <option value="3600000">1hr</option>
+              <option value="7200000">2hrs</option>
+              <option value="43200000">12hrs</option>
+              <option value="86400000">24hrs</option>
+              <option value="172800000" selected="selected">48hrs</option>
+              <option value="604800000">week</option>
+            </select>
+          </div>
+          <div id="input_radius" >              
+            <label class="input_label">within:</label> 
+            <select id="radius_set" class="link">
+              <option value="5">5miles</option>
+              <option value="10">10miles</option>
+              <option value="25" selected="selected">25miles</option>
+              <option value="50">50miles</option>
+              <option value="100">100miles</option>
+            </select>
+          </div>
+          <div id="submit_input">    
+            <input type="button" id="search_button" value="Get things 2do" class="link">
+          </div>    
+        </form>
+      </nav> 
+      <div id="results">    <!-- to be displayed once api response received -->
+        <p id="results_count"></p>
+        <p id="earliest_result" class="link"></p>
+      </div>
+      <div id="welcome">
+        <h1>welcome to 2do</h1> 
+        <img class="welcome_logo" src="images/main2dologo.gif" alt="welcome-logo">
+      </div> 
+      <!-- PLACEHOLDER WHILE MAP LOADS - SHOULD TRIGGER DISPLAY ON SEARCH CLICK BUT HAVE A HIGHER Z-SCORE THAN MAP SO THE MAP OVERWRITES IT --> 
+      <div id="searching">
+        <img class="welcome_logo" src="images/main2dologo.gif" alt="searching">
+        <h1>searching</h1>
+      </div> 
+      <!-- custom box for alerts -->
+      <div id="alert_box">
+        <div id="alert_message">
+        </div>
+        <div id="close_alert">    
+          <input type="button" id="close_alert_button" value="x">
+        </div>
+      </div>
+      <div id="map">
+      </div>
+      <div id="eventBoxes">
+        <div id="venue_content_div">
+          <div id="venue_details">
+            <h2 class="venue_div_heading">Venue:</h2>
+            <p><span id="venue_name" class="venue_insert"></span></p>
+            <p><span id="venue_image" class="venue_insert"></span></p>
+          </div>
+          <div id="venue_address">
+            <h2 class="venue_div_heading">Info:</h2>
+            <p>Type: <span id="venue_category" class="venue_insert"></span></p>
+            <p>Foursquare rating: <span id="venue_rating" class="venue_insert"></span></p>
+            <h2 class="venue_div_heading">Address:</h2>
+            <p><span id="venue_address1" class="venue_insert"></span></p>
+            <p><span id="venue_address2" class="venue_insert"></span></p>
+            <p><span id="venue_address3" class="venue_insert"></span></p>
+            <p><span id="venue_url" class="venue_insert"></span></p>
+          </div>
+          <div id="venue_tips">
+          </div>
+        </div>            
+      </div>  
+    </div>   
+  </body>
+</html>
+
+
+
+
+
+
+

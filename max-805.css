@@ -1,0 +1,109 @@
+#main_container { 
+  width: 98%;     /*eliminating whitespace to maintain site layout*/
+  height: 99%;
+}
+
+#welcome, #searching, #map, #eventBoxes {
+  height: 71%;
+  width: 90%;
+  padding: 1%;
+  margin: 3%;
+}
+
+#results {
+  margin-left: 13%;
+}
+
+#nav_image {
+  display: none;
+}
+
+#input_location {
+  padding-left: 0%;
+  }
+
+#location_search_term, #radius_set, #time_range_set {
+  width: 98%; 
+  }
+
+#input_form {
+  float: left;
+  margin-left: 2%;
+}
+
+#input_radius {
+  width: 25%;
+}  
+
+#input_time {
+  margin-left: 2%;
+}   
+
+#search_button {
+  margin-left: 32%;
+}
+
+@media (max-width: 543px) {
+  #submit_input {
+    padding-top: 2.8%;
+    width: 7%;
+  }
+}
+
+@media (max-width: 529px) {
+  div[id^="event_time_div"] {
+    font-size: 1.1em;
+    line-height: 5.4em;  
+  }
+
+  p[id^="event_date_p"] {
+    font-size: 1.4em;
+    line-height: 2em;
+  }
+}
+
+@media (max-width: 484px) {
+  p[id^="event_date_p"] {
+    font-size: 1.4em;
+    line-height: 2em;
+  }
+  div[id^="event_time_div"] {
+    font-size: 1.1em;
+    line-height: 5.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .input_label {
+    display: none;
+  }
+  #input_radius, #input_time {
+    padding-top: 7.2%;
+  }
+
+  #search_button {
+    font-size: 0.7em;
+    margin-top: 38%;
+  }
+  #venue_details, #venue_address {
+    width: 45%;
+  }
+  #venue_tips {
+    width: 88%;
+    margin-left: 10%;
+    margin-top: -10%;
+  }
+}
+
+@media (max-width: 416px) {
+  #search_button {
+    font-size: 0.5em;
+    margin-top: 42%;
+  }
+nav[id^="event_nav"] {
+    width: 92%;
+  }
+}
+
+
+
